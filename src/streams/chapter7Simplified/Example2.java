@@ -16,6 +16,7 @@ public class Example2 {
         System.out.println(lists);
 
         List<Integer> list = lists.stream().flatMap(Collection::stream).collect(Collectors.toCollection(ArrayList::new));
+//        List<Integer> list = lists.stream().flatMap(Collection::stream).collect(Collectors.toList());
 //        List<Integer> list = lists.stream().flatMap(Collection::stream).toList();
         System.out.println(list);
         list.removeFirst();
