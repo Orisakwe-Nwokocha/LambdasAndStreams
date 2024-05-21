@@ -13,7 +13,7 @@ public class Example1 {
         System.out.printf("Min: %d%n",
                 IntStream.of(values).min().orElse(-2343567));
 
-        System.out.println(Arrays.stream(values).sum());
+        System.out.println(Arrays.stream(values)  .sum());
 
         System.out.println(IntStream.of(values).reduce(0, Integer::sum));
 
