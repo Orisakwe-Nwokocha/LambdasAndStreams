@@ -28,10 +28,10 @@ public class Utility {
 
     public static BigDecimal total(String location) {
         List<Transaction> transactions = getTransactions(location);
-        BigDecimal sum = BigDecimal.ZERO;
+        BigDecimal total = BigDecimal.ZERO;
 
-        for (Transaction transaction : transactions) sum = sum.add(transaction.getAmount());
-        return sum;
+        for (Transaction transaction : transactions) total = total.add(transaction.getAmount());
+        return total;
     }
 
     public static List<Transaction> getTransactions(String location) {

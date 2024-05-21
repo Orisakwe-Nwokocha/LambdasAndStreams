@@ -7,8 +7,7 @@ import java.math.BigDecimal;
 
 
 import static org.junit.jupiter.api.Assertions.*;
-import static transactionOperations.TransactionOperations.getAverageTransactionAmount;
-import static transactionOperations.TransactionOperations.getTransactionsFor;
+import static transactionOperations.TransactionOperations.*;
 
 public class TransactionOperationsTest {
 
@@ -35,5 +34,18 @@ public class TransactionOperationsTest {
         System.out.println(actual);
         assertNotNull(actual);
         assertEquals(new BigDecimal("16500.00"), actual);
+    }
+
+    @Test
+    public void testGetAccountSummary() {
+        AccountSummary actual = getAccountSummary(5);
+        AccountSummary expected = new AccountSummary(
+                "Jean Gray",
+                new BigDecimal("44299.50"),
+                2L
+                );
+
+        assertNotNull(actual);
+        assertEquals(expected, actual);
     }
 }
